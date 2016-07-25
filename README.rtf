@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww27120\viewh12800\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs28 \cf0 This app provides a simple iOS client to connect with the 
+\i Vicon Motion Capture System
+\i0 . \
+\
+
+\b Features
+\b0 :\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}Basic connection with Vicon cameras, present within the same network as the client.\
+{\listtext	\'95	}Minimalistic UI to connect/disconnect with the Vicon system, monitor connection status, and view the currently tracked objects.\
+{\listtext	\'95	}Usable with both, iPhones and iPads.\
+{\listtext	\'95	}Vicon classes can be easily ported to an OS X application.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+The 
+\i\b iOSViconApp
+\b0  
+\i0 can be used in 
+\b two
+\b0  possible ways:\
+\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	1.	}Use it as a starting point for your own new project, and build your awesome app on top of it. But, please do delete the existing .git folder (hidden) first. (In terminal -> rm -rf .git)\
+{\listtext	2.	}If you already have an existing project, and want to simply add access to Vicon data, then copy and paste the folder titled '
+\i Vicon Files
+\i0 ' into your project directory. In this case, you will need to probably add some additional control in your .XIB file, in order to provide functionality like 'Connect/Disconnect', etc. Or you could also hard-code this into your program. Have a look at the 
+\i ViewController.m 
+\i0 file for hints on what to do.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+The primary classes of interest for your project are the 
+\i\b ViewController 
+\i0\b0 and the 
+\i\b ViconController
+\i0\b0 . You can use {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html"}}{\fldrslt Key-Value Observing}} to access data from this class. By observing the key "
+\i newFrameReceived
+\i0 ", data from the Vicon can be accessed. This is stored in an NSArray, and is accessible by 
+\i ViconController.trackingList \'97 
+\i0 it contains the name of each 
+\i ViconObject
+\i0  (as entered into the 'Vicon Tracker'), along with their positional and rotational information.\
+\
+
+\b iOS 5 Users: 
+\b0 Before running the app, 
+\b uncheck '
+\i Use Autolayout'
+\b0  
+\i0 checkbox in MainMenu.xib (under the 'File Inspector' tab).\
+\
+
+\b Important:
+\b0  Before connecting to the Vicon, ensure that your network connection (LAN or WiFi) is set-up to 'Manual' with IP Address 192.168.10.x (x being any unused number between 2 and 255) and subnet mask 255.255.255.0. }
